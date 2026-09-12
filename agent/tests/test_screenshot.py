@@ -51,15 +51,36 @@ def test_extract_reads_rows_and_leaves_missing_fields_null_not_guessed():
     assert rows[1].purchase_date is None and rows[1].purchase_nav is None
 
 
-def test_extract_drops_a_row_with_no_scheme_name_or_zero_units():
+def test_extract_reports_invalid_rows_instead_of_dropping_them():
     client = FakeVisionClient({"rows": [
         {"scheme_name": "", "units": 100},
         {"scheme_name": "Some Fund", "units": 0},
         {"scheme_name": "Some Fund", "units": -5},
+        {"scheme_name": "Axis Bluechip Fund", "units": 10, "folio": "F1",
+         "purchase_date": "2022-01-15", "purchase_nav": 45.0},
     ]})
-    assert extract_portfolio_image(client, b"x", "image/png") == []
+    rows = extract_portfolio_image(client, b"x", "image/png")
+    assert len(rows) == 4
+    assert rows[0].status == "invalid"
+    assert rows[1].status == "invalid"
+    assert rows[2].status == "invalid"
+    assert rows[3].status == "detected"
+    assert any("scheme_name" in issue.lower() for issue in rows[0].issues)
 
 
-def test_extract_tolerates_a_malformed_row_without_crashing():
-    client = FakeVisionClient({"rows": [{"scheme_name": "Axis Bluechip Fund"}]})  # no units at all
-    assert extract_portfolio_image(client, b"x", "image/png") == []
+def test_extract_marks_incomplete_rows_for_human_review_without_guessing():
+    client = FakeVisionClient({"rows": [{"scheme_name": "Axis Bluechip Fund", "units": 500}]})
+    rows = extract_portfolio_image(client, b"x", "image/png")
+    assert len(rows) == 1
+    row = rows[0]
+    assert row.status == "incomplete"
+    assert set(row.missing_fields()) == {"folio", "purchase_date", "purchase_nav"}
+    assert row.purchase_date is None and row.purchase_nav is None
+
+
+def test_extract_records_unusable_rows_as_review_items():
+    client = FakeVisionClient({"rows": [{"scheme_name": "Axis Bluechip Fund"}, None, {}]})
+    rows = extract_portfolio_image(client, b"x", "image/png")
+    assert rows[0].status == "invalid"
+    assert rows[1].status == "unusable"
+    assert rows[2].status == "invalid"

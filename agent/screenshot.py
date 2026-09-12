@@ -18,7 +18,7 @@ the real CAS instead, which has these by construction).
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 
 PORTFOLIO_ROW_TOOL = {
@@ -81,6 +81,8 @@ class PortfolioRow:
     purchase_date: Optional[str] = None
     purchase_nav: Optional[float] = None
     current_value: Optional[float] = None
+    status: str = "detected"
+    issues: list[str] = field(default_factory=list)
 
     def is_complete(self) -> bool:
         """Everything a `Lot` needs to FIFO correctly. Missing any of
@@ -97,28 +99,70 @@ class PortfolioRow:
             missing.append("purchase_nav")
         return missing
 
+    def mark_incomplete(self) -> None:
+        self.status = "incomplete"
+        if not self.issues:
+            self.issues.extend([f"missing required field(s): {', '.join(self.missing_fields())}"])
+
+    def mark_invalid(self, reason: str) -> None:
+        self.status = "invalid"
+        if reason and reason not in self.issues:
+            self.issues.append(reason)
+
+    def mark_unusable(self, reason: str) -> None:
+        self.status = "unusable"
+        if reason and reason not in self.issues:
+            self.issues.append(reason)
+
 
 def extract_portfolio_image(client, image_bytes: bytes, mime_type: str) -> list[PortfolioRow]:
     """`client` must implement `VisionLLMClient.extract_image`
-    (`AnthropicExtractionClient` / `GeminiExtractionClient` both do)."""
+    (`AnthropicExtractionClient` / `GeminiExtractionClient` both do).
+
+    A row is never silently lost: all detected rows are returned with an
+    explicit classification (`detected`, `incomplete`, `invalid`, or
+    `unusable`) and a reason list when the model supplied something but it is
+    incomplete or malformed.
+    """
     result = client.extract_image(SYSTEM_PROMPT, image_bytes, mime_type, PORTFOLIO_ROW_TOOL)
     out: list[PortfolioRow] = []
     for raw in result.get("rows", []):
-        try:
-            name = str(raw["scheme_name"]).strip()
-            units = float(raw["units"])
-        except (KeyError, TypeError, ValueError):
-            continue  # can't even place this row - worse than dropping it
-        if not name or units <= 0:
+        if raw is None or not isinstance(raw, dict):
+            out.append(PortfolioRow(scheme_name="", units=0.0, status="unusable", issues=["row payload was not an object"]))
             continue
-        out.append(PortfolioRow(
+        name = str(raw.get("scheme_name") or "").strip()
+        units_raw = raw.get("units")
+        row = PortfolioRow(
             scheme_name=name,
-            units=units,
-            folio=(str(raw["folio"]).strip() if raw.get("folio") else None),
-            purchase_date=(str(raw["purchase_date"]) if raw.get("purchase_date") else None),
-            purchase_nav=(float(raw["purchase_nav"]) if raw.get("purchase_nav") is not None else None),
-            current_value=(float(raw["current_value"]) if raw.get("current_value") is not None else None),
-        ))
+            units=0.0,
+            folio=(str(raw.get("folio") or "").strip() if raw.get("folio") else None),
+            purchase_date=(str(raw.get("purchase_date")) if raw.get("purchase_date") else None),
+            purchase_nav=(float(raw.get("purchase_nav")) if raw.get("purchase_nav") is not None else None),
+            current_value=(float(raw.get("current_value")) if raw.get("current_value") is not None else None),
+        )
+        if not name:
+            row.mark_invalid("missing scheme_name")
+            out.append(row)
+            continue
+        try:
+            units = float(units_raw)
+        except (TypeError, ValueError):
+            row.mark_invalid("missing or invalid units")
+            out.append(row)
+            continue
+        if units <= 0:
+            row.mark_invalid("units must be positive")
+            out.append(row)
+            continue
+        row.units = units
+        missing = row.missing_fields()
+        if missing:
+            row.mark_incomplete()
+            out.append(row)
+            continue
+        row.status = "detected"
+        row.issues = []
+        out.append(row)
     return out
 
 

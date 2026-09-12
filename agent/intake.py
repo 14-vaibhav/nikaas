@@ -309,12 +309,20 @@ def _resolve_portfolio_rows(
             )
             continue
 
-        if not row.is_complete():
+        if row.status == "incomplete":
             result.incomplete_holdings.append(IncompleteHolding(
                 filename=filename, scheme_id=resolved.scheme_id, label=resolved.label,
                 units=row.units, missing=row.missing_fields(),
                 folio=row.folio, current_value=row.current_value,
             ))
+            result.warnings.append(
+                f"{filename}: detected {row.scheme_name!r} but the row is incomplete; missing {', '.join(row.missing_fields())}."
+            )
+            continue
+        if row.status in {"invalid", "unusable"}:
+            result.warnings.append(
+                f"{filename}: detected row for {row.scheme_name or 'unknown scheme'} but it was {row.status}: {', '.join(row.issues) if row.issues else 'no usable details'}"
+            )
             continue
 
         lot_seq += 1
