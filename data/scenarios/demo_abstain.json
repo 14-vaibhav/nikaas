@@ -1,0 +1,126 @@
+{
+  "description": "Abstention demo. Three funds are candidates but one - Ghost Multi Asset - has no rule on file and no source the folder hunt can reach. The loop HUNTs for it, fails twice, and abstains rather than guessing a rule; it excludes the fund and still meets the goal from the other two. The abstained fund is listed with its reason, not silently dropped. Synthetic only.",
+  "goal": {
+    "amount": 500000,
+    "by_date": "2026-12-15",
+    "mode": "A"
+  },
+  "candidate_schemes": [
+    "s_solid_a",
+    "s_solid_b",
+    "s_ghost_c"
+  ],
+  "navs": {
+    "s_solid_a": 100.0,
+    "s_solid_b": 75.0,
+    "s_ghost_c": 60.0
+  },
+  "holdings": [
+    {
+      "lot_id": "l_solid_a_1",
+      "scheme_id": "s_solid_a",
+      "folio": "SLD0001 / 01",
+      "units": 8000,
+      "purchase_date": "2022-02-10",
+      "purchase_nav": 40.0
+    },
+    {
+      "lot_id": "l_solid_b_1",
+      "scheme_id": "s_solid_b",
+      "folio": "SLD0002 / 02",
+      "units": 4000,
+      "purchase_date": "2021-06-05",
+      "purchase_nav": 50.0
+    },
+    {
+      "lot_id": "l_ghost_c_1",
+      "scheme_id": "s_ghost_c",
+      "folio": "GHT0003 / 03",
+      "units": 5000,
+      "purchase_date": "2023-08-20",
+      "purchase_nav": 45.0
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c_s_solid_a_exit",
+      "scheme_id": "s_solid_a",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "solid-a-sid.pdf",
+        "page": 14,
+        "clause": "5.1",
+        "url": "https://example.invalid/solid-a-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_solid_a_tax",
+      "scheme_id": "s_solid_a",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_solid_b_exit",
+      "scheme_id": "s_solid_b",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "solid-b-sid.pdf",
+        "page": 14,
+        "clause": "5.1",
+        "url": "https://example.invalid/solid-b-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_solid_b_tax",
+      "scheme_id": "s_solid_b",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    }
+  ]
+}

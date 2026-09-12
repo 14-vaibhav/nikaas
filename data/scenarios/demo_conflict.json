@@ -1,0 +1,155 @@
+{
+  "description": "Synthetic scenario exercising the harder routes: two stacked exit-load addenda for one fund (RESOLVE), a stale tax rule with no URL (HUNT), and an ELSS lock-in that the first allocation breaches (repair -> exclude). Synthetic only.",
+  "hidden": true,
+  "_hidden_reason": "kept as unit-test fixtures (conftest.py, test_decide/test_loop/test_observe/test_selfcheck/test_watcher) - superseded on the hackathon page by demo_cas_18 / demo_mode_b_cas, which show the same behaviours at a more presentable scale",
+  "goal": {
+    "amount": 900000,
+    "by_date": "2026-11-20",
+    "mode": "A"
+  },
+  "candidate_schemes": [
+    "s_axis_bluechip",
+    "s_quant_elss"
+  ],
+  "navs": {
+    "s_axis_bluechip": 62.35,
+    "s_quant_elss": 410.5
+  },
+  "holdings": [
+    {
+      "lot_id": "l_axis_f001_1",
+      "scheme_id": "s_axis_bluechip",
+      "folio": "F001",
+      "units": 20000,
+      "purchase_date": "2021-06-15",
+      "purchase_nav": 40.0
+    },
+    {
+      "lot_id": "l_quant_f200_1",
+      "scheme_id": "s_quant_elss",
+      "folio": "F200",
+      "units": 3000,
+      "purchase_date": "2025-06-01",
+      "purchase_nav": 300.0
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c_axis_exit_sid",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "axis-bluechip-sid.pdf",
+        "page": 14,
+        "clause": "7.2",
+        "url": "https://www.axismf.com/schemeinfodocuments/axis-bluechip-sid.pdf",
+        "effective_date": "2024-01-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_axis_exit_addendum",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.5,
+        "window_days": 180
+      },
+      "source": {
+        "doc": "axis-addendum-2025-07.pdf",
+        "page": 1,
+        "clause": "1",
+        "url": "https://www.axismf.com/addenda/axis-addendum-2025-07.pdf",
+        "effective_date": "2025-07-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_axis_tax",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-equity-mf",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-04-01",
+        "retrieved_at": "2026-06-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_quant_exit",
+      "scheme_id": "s_quant_elss",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "quant-elss-sid.pdf",
+        "page": 19,
+        "clause": "6.4",
+        "url": "https://www.quantmutual.com/schemeinfodocuments/quant-elss-sid.pdf",
+        "effective_date": "2025-01-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_quant_lockin",
+      "scheme_id": "s_quant_elss",
+      "kind": "lock_in",
+      "value": {
+        "window_days": 1095
+      },
+      "source": {
+        "doc": "quant-elss-sid.pdf",
+        "page": 8,
+        "clause": "3.1",
+        "url": "https://www.quantmutual.com/schemeinfodocuments/quant-elss-sid.pdf",
+        "effective_date": "2025-01-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_quant_tax",
+      "scheme_id": "s_quant_elss",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-equity-mf",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-04-01",
+        "retrieved_at": "2026-06-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    }
+  ]
+}

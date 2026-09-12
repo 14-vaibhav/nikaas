@@ -1,0 +1,166 @@
+{
+  "description": "Timing frontier demo. The goal is 22 days out. One scheme (Beta Flexi) holds a large lot whose 365-day exit-load window lapses two days before the deadline, so the cost-vs-sell-date curve drops from ~Rs.6,000 to zero in one step. The self-check spots the cheaper date, re-plans onto it, finds the T+3 settlement would land after the deadline, and backs off to the original date - visible in the trace. Synthetic only.",
+  "goal": {
+    "amount": 900000,
+    "by_date": "2026-10-03",
+    "mode": "A"
+  },
+  "candidate_schemes": [
+    "s_alpha_index",
+    "s_beta_flexi",
+    "s_gamma_large"
+  ],
+  "navs": {
+    "s_alpha_index": 100.0,
+    "s_beta_flexi": 50.0,
+    "s_gamma_large": 200.0
+  },
+  "holdings": [
+    {
+      "lot_id": "l_alpha_1",
+      "scheme_id": "s_alpha_index",
+      "folio": "IDX0001 / 11",
+      "units": 1600,
+      "purchase_date": "2022-04-01",
+      "purchase_nav": 60.0
+    },
+    {
+      "lot_id": "l_gamma_1",
+      "scheme_id": "s_gamma_large",
+      "folio": "LRG0002 / 22",
+      "units": 900,
+      "purchase_date": "2021-10-01",
+      "purchase_nav": 120.0
+    },
+    {
+      "lot_id": "l_beta_1",
+      "scheme_id": "s_beta_flexi",
+      "folio": "FLX0003 / 33",
+      "units": 14000,
+      "purchase_date": "2025-10-02",
+      "purchase_nav": 44.0
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c_s_alpha_index_exit",
+      "scheme_id": "s_alpha_index",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "alpha-index-sid.pdf",
+        "page": 14,
+        "clause": "5.1",
+        "url": "https://example.invalid/alpha-index-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_alpha_index_tax",
+      "scheme_id": "s_alpha_index",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_beta_flexi_exit",
+      "scheme_id": "s_beta_flexi",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "beta-flexi-sid.pdf",
+        "page": 14,
+        "clause": "7.1",
+        "url": "https://example.invalid/beta-flexi-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_beta_flexi_tax",
+      "scheme_id": "s_beta_flexi",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_gamma_large_exit",
+      "scheme_id": "s_gamma_large",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "gamma-large-sid.pdf",
+        "page": 14,
+        "clause": "7.1",
+        "url": "https://example.invalid/gamma-large-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_gamma_large_tax",
+      "scheme_id": "s_gamma_large",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    }
+  ]
+}

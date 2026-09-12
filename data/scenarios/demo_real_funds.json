@@ -1,0 +1,228 @@
+{
+  "description": "Four REAL, currently-traded schemes under their real AMFI scheme codes, with exit-load rules sourced from public scheme documents (Quant Small Cap Fund's is machine-verified against its actual SID PDF, page 3) rather than invented - see tools/build_demo_real_funds.py for the full citation trail. Only the holdings (units, folios, purchase dates) are synthetic. The other three schemes are genuinely 0%-load right now and can't cover the goal alone, so the plan has to reach into the recent Quant Small Cap lot, which is still inside the real 365-day exit-load window - a real, sourced, non-zero exit load in the executed plan, not a placeholder.",
+  "goal": {
+    "amount": 450000,
+    "by_date": "2026-10-12",
+    "mode": "A"
+  },
+  "candidate_schemes": [
+    "100823",
+    "101763",
+    "100872",
+    "100176"
+  ],
+  "navs": {
+    "100176": 324.42,
+    "101763": 2145.6,
+    "100823": 171.04,
+    "100872": 4912.85
+  },
+  "holdings": [
+    {
+      "lot_id": "l_qsc_old",
+      "scheme_id": "100176",
+      "folio": "17880021 / 55",
+      "units": 200,
+      "purchase_date": "2022-06-15",
+      "purchase_nav": 145.2
+    },
+    {
+      "lot_id": "l_qsc_recent",
+      "scheme_id": "100176",
+      "folio": "17880021 / 55",
+      "units": 350,
+      "purchase_date": "2026-04-20",
+      "purchase_nav": 298.7
+    },
+    {
+      "lot_id": "l_hdfcfc_1",
+      "scheme_id": "101763",
+      "folio": "20447781 / 12",
+      "units": 80,
+      "purchase_date": "2021-11-10",
+      "purchase_nav": 980.4
+    },
+    {
+      "lot_id": "l_utin50_1",
+      "scheme_id": "100823",
+      "folio": "18220077 / 19",
+      "units": 600,
+      "purchase_date": "2022-01-05",
+      "purchase_nav": 128.6
+    },
+    {
+      "lot_id": "l_hdfcliq_1",
+      "scheme_id": "100872",
+      "folio": "20447781 / 88",
+      "units": 10,
+      "purchase_date": "2026-08-20",
+      "purchase_nav": 4890.1
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c_100176_tax",
+      "scheme_id": "100176",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_101763_tax",
+      "scheme_id": "101763",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_100823_tax",
+      "scheme_id": "100823",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_100872_tax",
+      "scheme_id": "100872",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_100176_exit",
+      "scheme_id": "100176",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "quant Small Cap Fund - Scheme Information Document (2023)",
+        "page": 3,
+        "clause": "Highlights table",
+        "url": "https://quantmutual.com/Admin/SIDPdf/quant%20Small%20Cap%20Fund_SID%202023.pdf",
+        "effective_date": "2023-01-01",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "verified",
+      "note": "machine-verified against the live SID PDF, page 3, 2026-09",
+      "superseded_by": null
+    },
+    {
+      "id": "c_101763_exit",
+      "scheme_id": "101763",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "HDFC Flexi Cap Fund - Scheme Information Document",
+        "page": 0,
+        "clause": "Load Structure",
+        "url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-flexi-cap-fund/direct",
+        "effective_date": "2023-01-01",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "inferred",
+      "note": "publicly stated 1%/1yr exit load - page not machine-verified against the SID PDF directly",
+      "superseded_by": null
+    },
+    {
+      "id": "c_100823_exit",
+      "scheme_id": "100823",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "UTI Nifty 50 Index Fund - Scheme Information Document",
+        "page": 0,
+        "clause": "Load Structure",
+        "url": "https://www.utimf.com/mutual-fund-schemes/uti-nifty-50-index-fund",
+        "effective_date": "2023-01-01",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "verified",
+      "note": "index fund - nil exit load, both plans",
+      "superseded_by": null
+    },
+    {
+      "id": "c_100872_exit",
+      "scheme_id": "100872",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "SEBI-mandated graded exit load on liquid funds (SEBI/HO/IMD circular; formalised via AMFI, 2019)",
+        "page": 0,
+        "clause": "graded schedule, days 1-6; nil from day 7",
+        "url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-liquid-fund/direct",
+        "effective_date": "2023-01-01",
+        "retrieved_at": "2026-09-10T10:00:00Z"
+      },
+      "confidence": "verified",
+      "note": "real rule decays ~0.007%->0.0045% over days 1-6, NIL from day 7 - this schema models one flat pct/window, so it is recorded as nil, which is what it equals for any holding older than a week",
+      "superseded_by": null
+    }
+  ]
+}

@@ -1,0 +1,1354 @@
+{
+  "description": "The 18-scheme hard case run through Mode B instead of Mode A: no human ticks anything, agent/selector.build_mode_b_factors derives a transparent weighted merit score for every holding straight from its exit-load, expense-ratio and lock-in evidence. The index / liquid / corporate-bond schemes score highest (cheapest to hold and to leave) and are what the merit-preserving plan holds back. Synthetic only - no real client data.",
+  "goal": {
+    "amount": 1800000,
+    "by_date": "2027-03-20",
+    "mode": "B"
+  },
+  "candidate_schemes": [
+    "s_axis_bluechip",
+    "s_hdfc_top100",
+    "s_sbi_smallcap",
+    "s_icici_bluechip",
+    "s_kotak_flexicap",
+    "s_mirae_largecap",
+    "s_nippon_smallcap",
+    "s_parag_flexicap",
+    "s_quant_elss",
+    "s_mirae_elss",
+    "s_uti_nifty50",
+    "s_hdfc_liquid",
+    "s_sbi_balanced_adv",
+    "s_icici_corp_bond",
+    "s_axis_midcap",
+    "s_canara_emerging",
+    "s_dsp_smallcap",
+    "s_franklin_focused"
+  ],
+  "navs": {
+    "s_axis_bluechip": 62.35,
+    "s_hdfc_top100": 1148.9,
+    "s_sbi_smallcap": 212.4,
+    "s_icici_bluechip": 106.1,
+    "s_kotak_flexicap": 88.2,
+    "s_mirae_largecap": 135.7,
+    "s_nippon_smallcap": 198.25,
+    "s_parag_flexicap": 82.6,
+    "s_quant_elss": 412.8,
+    "s_mirae_elss": 49.1,
+    "s_uti_nifty50": 168.4,
+    "s_hdfc_liquid": 4895.2,
+    "s_sbi_balanced_adv": 42.55,
+    "s_icici_corp_bond": 29.85,
+    "s_axis_midcap": 118.9,
+    "s_canara_emerging": 268.1,
+    "s_dsp_smallcap": 181.3,
+    "s_franklin_focused": 97.2
+  },
+  "holdings": [
+    {
+      "lot_id": "l_axisbc_cams_1",
+      "scheme_id": "s_axis_bluechip",
+      "folio": "11002233 / 45",
+      "units": 2400,
+      "purchase_date": "2021-02-11",
+      "purchase_nav": 41.1
+    },
+    {
+      "lot_id": "l_axisbc_cams_2",
+      "scheme_id": "s_axis_bluechip",
+      "folio": "11002233 / 45",
+      "units": 2000,
+      "purchase_date": "2026-06-20",
+      "purchase_nav": 60.4
+    },
+    {
+      "lot_id": "l_axisbc_kfin_1",
+      "scheme_id": "s_axis_bluechip",
+      "folio": "91850027431",
+      "units": 3000,
+      "purchase_date": "2023-08-05",
+      "purchase_nav": 52.75
+    },
+    {
+      "lot_id": "l_hdfctop_cams_1",
+      "scheme_id": "s_hdfc_top100",
+      "folio": "20447781 / 12",
+      "units": 180,
+      "purchase_date": "2020-11-30",
+      "purchase_nav": 610.0
+    },
+    {
+      "lot_id": "l_hdfctop_kfin_1",
+      "scheme_id": "s_hdfc_top100",
+      "folio": "80231145566",
+      "units": 260,
+      "purchase_date": "2026-02-15",
+      "purchase_nav": 1015.2
+    },
+    {
+      "lot_id": "l_utin50_1",
+      "scheme_id": "s_uti_nifty50",
+      "folio": "18220077 / 19",
+      "units": 700,
+      "purchase_date": "2021-05-06",
+      "purchase_nav": 92.4
+    },
+    {
+      "lot_id": "l_hdfcliq_1",
+      "scheme_id": "s_hdfc_liquid",
+      "folio": "20447781 / 88",
+      "units": 16,
+      "purchase_date": "2026-07-01",
+      "purchase_nav": 4790.0
+    },
+    {
+      "lot_id": "l_icicicb_1",
+      "scheme_id": "s_icici_corp_bond",
+      "folio": "14778820 / 90",
+      "units": 3500,
+      "purchase_date": "2023-04-12",
+      "purchase_nav": 25.6
+    },
+    {
+      "lot_id": "l_quantelss_1",
+      "scheme_id": "s_quant_elss",
+      "folio": "17880021 / 55",
+      "units": 150,
+      "purchase_date": "2022-01-10",
+      "purchase_nav": 250.3
+    },
+    {
+      "lot_id": "l_miraeelss_1",
+      "scheme_id": "s_mirae_elss",
+      "folio": "90880012230",
+      "units": 4000,
+      "purchase_date": "2025-02-18",
+      "purchase_nav": 40.1
+    },
+    {
+      "lot_id": "l_sbismc_1",
+      "scheme_id": "s_sbi_smallcap",
+      "folio": "13559002 / 01",
+      "units": 700,
+      "purchase_date": "2021-07-19",
+      "purchase_nav": 95.3
+    },
+    {
+      "lot_id": "l_sbismc_2",
+      "scheme_id": "s_sbi_smallcap",
+      "folio": "13559002 / 01",
+      "units": 900,
+      "purchase_date": "2026-05-02",
+      "purchase_nav": 178.4
+    },
+    {
+      "lot_id": "l_icicibc_1",
+      "scheme_id": "s_icici_bluechip",
+      "folio": "14778820 / 33",
+      "units": 1200,
+      "purchase_date": "2022-03-08",
+      "purchase_nav": 71.4
+    },
+    {
+      "lot_id": "l_icicibc_2",
+      "scheme_id": "s_icici_bluechip",
+      "folio": "14778820 / 33",
+      "units": 1400,
+      "purchase_date": "2026-04-15",
+      "purchase_nav": 99.8
+    },
+    {
+      "lot_id": "l_kotakfc_1",
+      "scheme_id": "s_kotak_flexicap",
+      "folio": "15220034 / 77",
+      "units": 1500,
+      "purchase_date": "2022-09-14",
+      "purchase_nav": 58.1
+    },
+    {
+      "lot_id": "l_miraelc_1",
+      "scheme_id": "s_mirae_largecap",
+      "folio": "90114400271",
+      "units": 900,
+      "purchase_date": "2021-12-02",
+      "purchase_nav": 84.2
+    },
+    {
+      "lot_id": "l_nipsmc_1",
+      "scheme_id": "s_nippon_smallcap",
+      "folio": "90552113004",
+      "units": 600,
+      "purchase_date": "2023-01-25",
+      "purchase_nav": 121.6
+    },
+    {
+      "lot_id": "l_axismc_1",
+      "scheme_id": "s_axis_midcap",
+      "folio": "11002233 / 71",
+      "units": 700,
+      "purchase_date": "2021-10-04",
+      "purchase_nav": 70.2
+    },
+    {
+      "lot_id": "l_canem_1",
+      "scheme_id": "s_canara_emerging",
+      "folio": "19004455 / 02",
+      "units": 300,
+      "purchase_date": "2022-06-30",
+      "purchase_nav": 178.4
+    },
+    {
+      "lot_id": "l_dspsmc_1",
+      "scheme_id": "s_dsp_smallcap",
+      "folio": "90773311209",
+      "units": 500,
+      "purchase_date": "2023-03-17",
+      "purchase_nav": 132.1
+    },
+    {
+      "lot_id": "l_frankf_1",
+      "scheme_id": "s_franklin_focused",
+      "folio": "21550098 / 06",
+      "units": 1000,
+      "purchase_date": "2022-08-22",
+      "purchase_nav": 70.9
+    },
+    {
+      "lot_id": "l_ppfc_1",
+      "scheme_id": "s_parag_flexicap",
+      "folio": "16003399 / 08",
+      "units": 4000,
+      "purchase_date": "2020-08-10",
+      "purchase_nav": 38.9
+    },
+    {
+      "lot_id": "l_sbibaf_1",
+      "scheme_id": "s_sbi_balanced_adv",
+      "folio": "13559002 / 44",
+      "units": 4000,
+      "purchase_date": "2022-11-21",
+      "purchase_nav": 31.05
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c_s_axis_bluechip_tax",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_axis_bluechip_ter",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.72
+      },
+      "source": {
+        "doc": "axis-bluechip-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.axismf.com/schemeinfodocuments/axis-bluechip-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_axis_bluechip_exit_sid",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "axis-bluechip-sid.pdf",
+        "page": 14,
+        "clause": "7.2",
+        "url": "https://www.axismf.com/schemeinfodocuments/axis-bluechip-sid.pdf",
+        "effective_date": "2024-01-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_axis_bluechip_exit_add",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.5,
+        "window_days": 180
+      },
+      "source": {
+        "doc": "axis-notice-cum-addendum-2025-31.pdf",
+        "page": 1,
+        "clause": "1",
+        "url": "https://www.axismf.com/addenda/axis-2025-31.pdf",
+        "effective_date": "2025-08-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_top100_tax",
+      "scheme_id": "s_hdfc_top100",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_top100_ter",
+      "scheme_id": "s_hdfc_top100",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.68
+      },
+      "source": {
+        "doc": "hdfc-top100-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.hdfcfund.com/schemeinfodocuments/hdfc-top100-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_top100_exit",
+      "scheme_id": "s_hdfc_top100",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "hdfc-top100-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.hdfcfund.com/schemeinfodocuments/hdfc-top100-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_sbi_smallcap_tax",
+      "scheme_id": "s_sbi_smallcap",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_sbi_smallcap_ter",
+      "scheme_id": "s_sbi_smallcap",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.66
+      },
+      "source": {
+        "doc": "sbi-smallcap-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.sbimf.com/schemeinfodocuments/sbi-smallcap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_sbi_smallcap_exit",
+      "scheme_id": "s_sbi_smallcap",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "sbi-smallcap-sid.pdf",
+        "page": 17,
+        "clause": "6.3",
+        "url": null,
+        "effective_date": "2024-05-01",
+        "retrieved_at": "2026-06-15T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_icici_bluechip_tax",
+      "scheme_id": "s_icici_bluechip",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_icici_bluechip_ter",
+      "scheme_id": "s_icici_bluechip",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.45
+      },
+      "source": {
+        "doc": "icici-bluechip-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.icicipruamc.com/schemeinfodocuments/icici-bluechip-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_icici_bluechip_exit",
+      "scheme_id": "s_icici_bluechip",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "icici-bluechip-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.icicipruamc.com/schemeinfodocuments/icici-bluechip-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_kotak_flexicap_tax",
+      "scheme_id": "s_kotak_flexicap",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_kotak_flexicap_ter",
+      "scheme_id": "s_kotak_flexicap",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.53
+      },
+      "source": {
+        "doc": "kotak-flexicap-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.kotakmf.com/schemeinfodocuments/kotak-flexicap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_kotak_flexicap_exit",
+      "scheme_id": "s_kotak_flexicap",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "kotak-flexicap-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.kotakmf.com/schemeinfodocuments/kotak-flexicap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_mirae_largecap_tax",
+      "scheme_id": "s_mirae_largecap",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_mirae_largecap_ter",
+      "scheme_id": "s_mirae_largecap",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.49
+      },
+      "source": {
+        "doc": "mirae-largecap-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.miraeassetmf.co.in/schemeinfodocuments/mirae-largecap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_mirae_largecap_exit",
+      "scheme_id": "s_mirae_largecap",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "mirae-largecap-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.miraeassetmf.co.in/schemeinfodocuments/mirae-largecap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_nippon_smallcap_tax",
+      "scheme_id": "s_nippon_smallcap",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_nippon_smallcap_ter",
+      "scheme_id": "s_nippon_smallcap",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.55
+      },
+      "source": {
+        "doc": "nippon-smallcap-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://mf.nipponindiaim.com/schemeinfodocuments/nippon-smallcap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_nippon_smallcap_exit",
+      "scheme_id": "s_nippon_smallcap",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "nippon-smallcap-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://mf.nipponindiaim.com/schemeinfodocuments/nippon-smallcap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_parag_flexicap_tax",
+      "scheme_id": "s_parag_flexicap",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_parag_flexicap_ter",
+      "scheme_id": "s_parag_flexicap",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.33
+      },
+      "source": {
+        "doc": "ppfas-flexicap-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://amc.ppfas.com/schemeinfodocuments/ppfas-flexicap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_parag_flexicap_exit",
+      "scheme_id": "s_parag_flexicap",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "ppfas-flexicap-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://amc.ppfas.com/schemeinfodocuments/ppfas-flexicap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_quant_elss_tax",
+      "scheme_id": "s_quant_elss",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_quant_elss_ter",
+      "scheme_id": "s_quant_elss",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.77
+      },
+      "source": {
+        "doc": "quant-elss-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.quantmutual.com/schemeinfodocuments/quant-elss-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_quant_elss_exit",
+      "scheme_id": "s_quant_elss",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "quant-elss-sid.pdf",
+        "page": 11,
+        "clause": "5.1",
+        "url": "https://www.quantmutual.com/schemeinfodocuments/quant-elss-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_quant_elss_lockin",
+      "scheme_id": "s_quant_elss",
+      "kind": "lock_in",
+      "value": {
+        "window_days": 1095
+      },
+      "source": {
+        "doc": "quant-elss-sid.pdf",
+        "page": 8,
+        "clause": "3.1",
+        "url": "https://www.quantmutual.com/schemeinfodocuments/quant-elss-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_mirae_elss_tax",
+      "scheme_id": "s_mirae_elss",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_mirae_elss_ter",
+      "scheme_id": "s_mirae_elss",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.58
+      },
+      "source": {
+        "doc": "mirae-elss-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.miraeassetmf.co.in/schemeinfodocuments/mirae-elss-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_mirae_elss_exit",
+      "scheme_id": "s_mirae_elss",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "mirae-elss-sid.pdf",
+        "page": 11,
+        "clause": "5.1",
+        "url": "https://www.miraeassetmf.co.in/schemeinfodocuments/mirae-elss-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_mirae_elss_lockin",
+      "scheme_id": "s_mirae_elss",
+      "kind": "lock_in",
+      "value": {
+        "window_days": 1095
+      },
+      "source": {
+        "doc": "mirae-elss-sid.pdf",
+        "page": 8,
+        "clause": "3.1",
+        "url": "https://www.miraeassetmf.co.in/schemeinfodocuments/mirae-elss-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_uti_nifty50_tax",
+      "scheme_id": "s_uti_nifty50",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_uti_nifty50_ter",
+      "scheme_id": "s_uti_nifty50",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 0.21
+      },
+      "source": {
+        "doc": "uti-nifty50-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.utimf.com/schemeinfodocuments/uti-nifty50-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_uti_nifty50_exit",
+      "scheme_id": "s_uti_nifty50",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "uti-nifty50-sid.pdf",
+        "page": 11,
+        "clause": "5.1",
+        "url": "https://www.utimf.com/schemeinfodocuments/uti-nifty50-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_liquid_tax",
+      "scheme_id": "s_hdfc_liquid",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_liquid_ter",
+      "scheme_id": "s_hdfc_liquid",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 0.3
+      },
+      "source": {
+        "doc": "hdfc-liquid-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.hdfcfund.com/schemeinfodocuments/hdfc-liquid-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_liquid_exit",
+      "scheme_id": "s_hdfc_liquid",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "hdfc-liquid-sid.pdf",
+        "page": 11,
+        "clause": "5.1",
+        "url": "https://www.hdfcfund.com/schemeinfodocuments/hdfc-liquid-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_sbi_balanced_adv_tax",
+      "scheme_id": "s_sbi_balanced_adv",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_sbi_balanced_adv_ter",
+      "scheme_id": "s_sbi_balanced_adv",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.61
+      },
+      "source": {
+        "doc": "sbi-baf-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.sbimf.com/schemeinfodocuments/sbi-baf-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_sbi_balanced_adv_exit",
+      "scheme_id": "s_sbi_balanced_adv",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "sbi-baf-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.sbimf.com/schemeinfodocuments/sbi-baf-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_icici_corp_bond_tax",
+      "scheme_id": "s_icici_corp_bond",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_icici_corp_bond_ter",
+      "scheme_id": "s_icici_corp_bond",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 0.58
+      },
+      "source": {
+        "doc": "icici-corpbond-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.icicipruamc.com/schemeinfodocuments/icici-corpbond-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_icici_corp_bond_exit",
+      "scheme_id": "s_icici_corp_bond",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "icici-corpbond-sid.pdf",
+        "page": 11,
+        "clause": "5.1",
+        "url": "https://www.icicipruamc.com/schemeinfodocuments/icici-corpbond-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_axis_midcap_tax",
+      "scheme_id": "s_axis_midcap",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_axis_midcap_ter",
+      "scheme_id": "s_axis_midcap",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.7
+      },
+      "source": {
+        "doc": "axis-midcap-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.axismf.com/schemeinfodocuments/axis-midcap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_axis_midcap_exit",
+      "scheme_id": "s_axis_midcap",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "axis-midcap-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.axismf.com/schemeinfodocuments/axis-midcap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_canara_emerging_tax",
+      "scheme_id": "s_canara_emerging",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_canara_emerging_ter",
+      "scheme_id": "s_canara_emerging",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.63
+      },
+      "source": {
+        "doc": "canara-emerging-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.canararobeco.com/schemeinfodocuments/canara-emerging-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_canara_emerging_exit",
+      "scheme_id": "s_canara_emerging",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "canara-emerging-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.canararobeco.com/schemeinfodocuments/canara-emerging-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_dsp_smallcap_tax",
+      "scheme_id": "s_dsp_smallcap",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_dsp_smallcap_ter",
+      "scheme_id": "s_dsp_smallcap",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.71
+      },
+      "source": {
+        "doc": "dsp-smallcap-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.dspim.com/schemeinfodocuments/dsp-smallcap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_dsp_smallcap_exit",
+      "scheme_id": "s_dsp_smallcap",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "dsp-smallcap-sid.pdf",
+        "page": 15,
+        "clause": "7.1",
+        "url": "https://www.dspim.com/schemeinfodocuments/dsp-smallcap-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_franklin_focused_tax",
+      "scheme_id": "s_franklin_focused",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_franklin_focused_ter",
+      "scheme_id": "s_franklin_focused",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.74
+      },
+      "source": {
+        "doc": "franklin-focused-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.franklintempletonindia.com/schemeinfodocuments/franklin-focused-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_franklin_exit_a",
+      "scheme_id": "s_franklin_focused",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "franklin-addendum-2025-14.pdf",
+        "page": 1,
+        "clause": "2",
+        "url": "https://www.franklintempletonindia.com/addenda/ft-2025-14.pdf",
+        "effective_date": "2025-06-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_franklin_exit_b",
+      "scheme_id": "s_franklin_focused",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.75,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "franklin-addendum-2025-15.pdf",
+        "page": 1,
+        "clause": "1",
+        "url": "https://www.franklintempletonindia.com/addenda/ft-2025-15.pdf",
+        "effective_date": "2025-06-01",
+        "retrieved_at": "2026-09-08T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    }
+  ]
+}

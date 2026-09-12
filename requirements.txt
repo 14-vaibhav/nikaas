@@ -1,0 +1,21 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.9
+httpx>=0.27
+python-dotenv>=1.0
+python-multipart>=0.0.9   # multipart form parsing for POST /api/intake's file uploads
+
+# Hunter: fetch + parse the open web
+beautifulsoup4>=4.12
+pdfplumber>=0.11
+pytesseract>=0.3.13        # OCR fallback for scanned SIDs (needs the `tesseract` binary)
+pypdfium2>=4.30            # render PDF pages for OCR
+Pillow>=10.4
+
+# Extraction - pick a provider via LLM_PROVIDER in .env
+anthropic>=0.39
+google-genai>=1.0     # LLM_PROVIDER=gemini - a free Google AI Studio key works
+
+# Tests
+pytest>=8.3
+respx>=0.21                # record/replay HTTP for hunter tests

@@ -1,0 +1,116 @@
+{
+  "description": "Honesty demo. The goal (Rs.50,00,000) is far larger than the whole portfolio (~Rs.9,00,000). The allocator sells everything, the verifier raises SHORTFALL, and the loop stops with 'goal not reachable from the available holdings' - no partial plan is dressed up as done, and nothing is approvable. Synthetic only.",
+  "goal": {
+    "amount": 5000000,
+    "by_date": "2026-11-30",
+    "mode": "A"
+  },
+  "candidate_schemes": [
+    "s_tiny_a",
+    "s_tiny_b"
+  ],
+  "navs": {
+    "s_tiny_a": 50.0,
+    "s_tiny_b": 80.0
+  },
+  "holdings": [
+    {
+      "lot_id": "l_tiny_a_1",
+      "scheme_id": "s_tiny_a",
+      "folio": "TNY0001 / 01",
+      "units": 10000,
+      "purchase_date": "2022-01-15",
+      "purchase_nav": 30.0
+    },
+    {
+      "lot_id": "l_tiny_b_1",
+      "scheme_id": "s_tiny_b",
+      "folio": "TNY0002 / 02",
+      "units": 5000,
+      "purchase_date": "2021-09-01",
+      "purchase_nav": 50.0
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c_s_tiny_a_exit",
+      "scheme_id": "s_tiny_a",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "tiny-a-sid.pdf",
+        "page": 14,
+        "clause": "5.1",
+        "url": "https://example.invalid/tiny-a-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_tiny_a_tax",
+      "scheme_id": "s_tiny_a",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_tiny_b_exit",
+      "scheme_id": "s_tiny_b",
+      "kind": "exit_load",
+      "value": {
+        "pct": 0.0,
+        "window_days": 0
+      },
+      "source": {
+        "doc": "tiny-b-sid.pdf",
+        "page": 14,
+        "clause": "5.1",
+        "url": "https://example.invalid/tiny-b-sid.pdf",
+        "effective_date": "2025-04-01",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_tiny_b_tax",
+      "scheme_id": "s_tiny_b",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-1961-sec-112A",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-07-23",
+        "retrieved_at": "2026-09-09T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    }
+  ]
+}

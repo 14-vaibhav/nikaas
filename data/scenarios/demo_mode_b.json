@@ -1,0 +1,162 @@
+{
+  "description": "Same two funds as demo_basic, run through Mode B instead of Mode A: no human ticks anything, agent/selector.build_mode_b_factors derives the weighted merit score straight from the exit-load, expense-ratio and lock-in evidence already in the constraints below. Axis's lower expense ratio wins it the merit-preserving hold-back. Synthetic only \u2014 no real client data.",
+  "hidden": true,
+  "_hidden_reason": "kept as unit-test fixtures (conftest.py, test_decide/test_loop/test_observe/test_selfcheck/test_watcher) - superseded on the hackathon page by demo_cas_18 / demo_mode_b_cas, which show the same behaviours at a more presentable scale",
+  "goal": {
+    "amount": 1500000,
+    "by_date": "2026-10-05",
+    "mode": "B"
+  },
+  "candidate_schemes": [
+    "s_axis_bluechip",
+    "s_hdfc_top100"
+  ],
+  "navs": {
+    "s_axis_bluechip": 62.35,
+    "s_hdfc_top100": 891.2
+  },
+  "holdings": [
+    {
+      "lot_id": "l_axis_f001_1",
+      "scheme_id": "s_axis_bluechip",
+      "folio": "F001",
+      "units": 30000,
+      "purchase_date": "2022-01-15",
+      "purchase_nav": 45.0
+    },
+    {
+      "lot_id": "l_axis_f002_1",
+      "scheme_id": "s_axis_bluechip",
+      "folio": "F002",
+      "units": 5000,
+      "purchase_date": "2026-08-01",
+      "purchase_nav": 60.0
+    },
+    {
+      "lot_id": "l_hdfc_f010_1",
+      "scheme_id": "s_hdfc_top100",
+      "folio": "F010",
+      "units": 2000,
+      "purchase_date": "2021-03-10",
+      "purchase_nav": 700.0
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c_s_axis_bluechip_exit_load",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "axis-bluechip-sid.pdf",
+        "page": 14,
+        "clause": "7.2",
+        "url": "https://www.axismf.com/schemeinfodocuments/axis-bluechip-sid.pdf",
+        "effective_date": "2025-01-01",
+        "retrieved_at": "2026-09-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_axis_bluechip_expense",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 1.8
+      },
+      "source": {
+        "doc": "axis-bluechip-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.axismf.com/schemeinfodocuments/axis-bluechip-sid.pdf",
+        "effective_date": "2025-01-01",
+        "retrieved_at": "2026-09-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_axis_bluechip_tax",
+      "scheme_id": "s_axis_bluechip",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-equity-mf",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-04-01",
+        "retrieved_at": "2026-09-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_top100_exit_load",
+      "scheme_id": "s_hdfc_top100",
+      "kind": "exit_load",
+      "value": {
+        "pct": 1.0,
+        "window_days": 365
+      },
+      "source": {
+        "doc": "hdfc-top100-sid.pdf",
+        "page": 22,
+        "clause": "9.1",
+        "url": "https://www.hdfcfund.com/schemeinfodocuments/hdfc-top100-sid.pdf",
+        "effective_date": "2025-03-01",
+        "retrieved_at": "2026-09-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_top100_expense",
+      "scheme_id": "s_hdfc_top100",
+      "kind": "expense_ratio",
+      "value": {
+        "pct": 2.3
+      },
+      "source": {
+        "doc": "hdfc-top100-sid.pdf",
+        "page": 6,
+        "clause": "4.1",
+        "url": "https://www.hdfcfund.com/schemeinfodocuments/hdfc-top100-sid.pdf",
+        "effective_date": "2025-03-01",
+        "retrieved_at": "2026-09-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    },
+    {
+      "id": "c_s_hdfc_top100_tax",
+      "scheme_id": "s_hdfc_top100",
+      "kind": "tax_rule",
+      "value": {
+        "ltcg_threshold_days": 365,
+        "ltcg_rate": 0.125,
+        "stcg_rate": 0.2,
+        "ltcg_exemption": 125000
+      },
+      "source": {
+        "doc": "income-tax-act-equity-mf",
+        "page": 1,
+        "clause": "112A",
+        "url": null,
+        "effective_date": "2024-04-01",
+        "retrieved_at": "2026-09-01T10:00:00Z"
+      },
+      "confidence": "verified",
+      "superseded_by": null
+    }
+  ]
+}

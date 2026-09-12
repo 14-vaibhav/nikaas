@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+data/cache.sqlite3
+data/nikaas.sqlite3
+data/amc/amfi_directory.json
+
+node_modules/
+web/dist/
+.DS_Store
+
+.env
+*.log
