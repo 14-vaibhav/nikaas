@@ -138,14 +138,28 @@ def load_amfi_directory(
 ) -> dict[str, dict]:
     """Returns {scheme_name_lower: {"scheme_code", "amc", "isin"}}.
 
-    Uses the on-disk cache unless `refresh` is set or the cache is absent,
-    in which case it pulls AMFI's NAVAll.txt (needs network) and rewrites
-    the cache."""
+    The cache is the default fast path. If it is absent or stale/forced, a
+    network refresh is attempted. A failed refresh never destroys the cached
+    data; instead it falls back to the last known directory so the system can
+    distinguish a cache miss from a real scheme absence. """
     path = path or DIRECTORY_CACHE
-    if path.exists() and not refresh:
-        return json.loads(path.read_text())
+    cached: dict[str, dict] = {}
+    if path.exists():
+        try:
+            cached = json.loads(path.read_text())
+        except (TypeError, ValueError):
+            cached = {}
 
-    text = _fetch_navall(http)
+    if not refresh and cached:
+        return cached
+
+    try:
+        text = _fetch_navall(http)
+    except Exception:
+        if cached:
+            return cached
+        raise
+
     directory = parse_amfi_navall(text)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(directory))

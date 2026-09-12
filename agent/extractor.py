@@ -215,18 +215,28 @@ def extract_page(
     result = client.extract(SYSTEM_PROMPT, page_text, EXTRACTION_TOOL)
     constraints: list[Constraint] = []
     for i, raw in enumerate(result.get("constraints", [])):
+        if not isinstance(raw, dict):
+            continue
         clause = raw.get("clause")
         if not clause:
             continue  # no clause, no constraint — never guess a citation
         kind = raw.get("kind", "")
-        value = {k: raw[k] for k in _VALUE_FIELDS.get(kind, ()) if raw.get(k) is not None}
+
+        # Accept both the current flat schema and the older nested `value` shape.
+        value = dict(raw.get("value") or {})
+        for key in _VALUE_FIELDS.get(kind, ()):
+            if raw.get(key) is not None:
+                value[key] = raw[key]
+
         if not _value_is_usable(kind, value):
             continue  # the number itself never actually arrived - don't pass off a hollow rule as real
+
         source = Source(
             doc=doc_name, page=page_number, clause=clause, url=url,
             effective_date=raw.get("effective_date") or effective_date_fallback,
             retrieved_at=retrieved_at,
         )
+
         constraints.append(Constraint(
             id=f"c_{scheme_id}_{kind}_{doc_name}_{page_number}_{i}",
             scheme_id=scheme_id, kind=kind, value=value,
